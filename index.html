@@ -55,7 +55,7 @@ input,textarea{font:inherit;color:inherit}
 
 /* ---------- app ---------- */
 .app{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--bg)}
-.top{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border-bottom:1px solid var(--line);min-height:60px;flex:none}
+.top{display:flex;align-items:center;gap:6px;padding:8px 12px 8px 16px;background:#fff;box-shadow:0 1px 0 var(--line);position:relative;z-index:1;min-height:60px;flex:none}
 .top .logo{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;background:#fff;overflow:hidden}
 .top .logo img{width:32px;height:32px;object-fit:contain}
 .top h2{font-size:17px;margin:0;font-weight:600;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -71,12 +71,12 @@ input,textarea{font:inherit;color:inherit}
 
 .scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
 .pad{padding:18px 16px 28px}
-.h1{font-size:28px;font-weight:700;margin:4px 0 14px;letter-spacing:-.01em}
-.h3{font-size:13px;font-weight:600;color:var(--g);text-transform:uppercase;letter-spacing:.04em;margin:26px 0 10px;display:flex;align-items:center;gap:8px}
-.h3 .n{background:var(--b);color:#fff;border-radius:999px;font-size:11px;padding:1px 7px;letter-spacing:0}
-.card{background:var(--card);border-radius:var(--r3);border:1px solid var(--line)}
+.h1{font-size:22px;font-weight:600;margin:2px 0 12px;letter-spacing:-.01em}
+.h3{font-size:15px;font-weight:600;color:var(--t);margin:26px 0 8px;display:flex;align-items:center;gap:8px}
+.h3 .n{background:var(--b-pale);color:var(--b);border-radius:999px;font-size:11px;padding:1px 7px;letter-spacing:0}
+.card{background:var(--card);border-radius:16px}
 .row{display:flex;align-items:center;gap:12px;padding:12px 14px;min-height:64px;width:100%;text-align:left}
-.row+.row{border-top:1px solid var(--line)}
+.row+.row{box-shadow:inset 0 1px 0 var(--line)}
 .row .tx{flex:1;min-width:0}
 .row .tx b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .row .tx small{display:block;color:var(--g);font-size:13px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -84,10 +84,10 @@ input,textarea{font:inherit;color:inherit}
 .chev{color:var(--g2)}
 .pill{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border-radius:999px;font-weight:600}
 .pill.p{background:var(--b);color:var(--b-ink)}
-.pill.s{background:#fff;border:1px solid var(--line)}
+.pill.s{background:#fff;border:0}
 .pill.sm{min-height:32px;padding:0 12px;font-size:13px}
 .pill.lg{min-height:48px;padding:0 22px;font-size:16px}
-.call{width:44px;height:44px;border-radius:50%;background:var(--b);color:#fff;display:grid;place-items:center;flex:none}
+.call{width:44px;height:44px;border-radius:50%;background:none;color:var(--t);display:grid;place-items:center;flex:none}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 4px;scrollbar-width:none}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:none;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:14px;display:inline-flex;align-items:center;gap:6px}
@@ -96,68 +96,76 @@ input,textarea{font:inherit;color:inherit}
 .f-pdf{background:#D93B3B}.f-xlsx{background:#1D7A45}.f-docx{background:#2F5FD0}.f-pptx{background:#D9652B}.f-png{background:#8D68FA}
 
 /* barre de chat d'entreprise sur l'accueil */
-.ask{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:var(--r3);padding:8px 8px 8px 16px;min-height:56px;width:100%;text-align:left;box-shadow:0 6px 20px rgba(27,21,48,.05)}
+.ask{display:flex;align-items:center;gap:10px;background:#fff;border:0;border-radius:999px;padding:6px 6px 6px 16px;min-height:52px;width:100%;text-align:left}
 .ask .q{flex:1;color:var(--g2)}
-.ask .go{width:40px;height:40px;border-radius:50%;background:var(--b);color:#fff;display:grid;place-items:center}
+.ask .go{width:38px;height:38px;border-radius:50%;background:var(--b);color:#fff;display:grid;place-items:center}
 
 /* à traiter / en cours */
-.todo{display:flex;gap:12px;padding:14px;align-items:flex-start}
-.todo+.todo{border-top:1px solid var(--line)}
+.todo{display:flex;gap:12px;padding:12px 14px;align-items:center;min-height:64px}
+.todo+.todo{box-shadow:inset 0 1px 0 var(--line)}
+.todo .av{width:40px;height:40px}
+.todo .tx small{display:block;color:var(--g);font-size:13px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.todo .tx b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.todo .act{flex:none;min-height:36px;padding:0 14px;border-radius:999px;background:var(--b-pale);color:var(--b);font-weight:600;font-size:14px}
 .todo .tx{flex:1;min-width:0}.todo .tx b{font-weight:600}.todo .tx p{margin:3px 0 10px;color:var(--g);font-size:14px;line-height:1.4}
 .todo .acts{display:flex;gap:8px;flex-wrap:wrap}
-.prog{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:8px}
+.prog{height:4px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:8px}
 .prog i{display:block;height:100%;background:var(--b);border-radius:99px}
 .livh{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 4px}
 .livh::-webkit-scrollbar{display:none}
-.lv{flex:none;width:150px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:12px}
+.lv{flex:none;width:150px;text-align:left;background:#fff;border:0;border-radius:var(--r2);padding:12px}
 .lv b{display:block;font-size:14px;font-weight:600;margin:10px 0 4px;line-height:1.3;height:36px;overflow:hidden}
 .lv small{color:var(--g);font-size:12px;display:flex;align-items:center;gap:6px}
 .lv small img{width:18px;height:18px;border-radius:50%}
 
 /* barre basse */
-.nav{display:flex;background:#fff;border-top:1px solid var(--line);padding:6px 4px calc(6px + var(--safe-b));flex:none}
+.nav{display:flex;background:#fff;box-shadow:0 -1px 0 var(--line);padding:6px 4px calc(6px + var(--safe-b));flex:none}
 .nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:12px;color:var(--g);min-height:52px;justify-content:center;position:relative}
 .nav button .ic{width:56px;height:30px;border-radius:999px;display:grid;place-items:center}
 .nav button[aria-current=page]{color:var(--b);font-weight:600}
-.nav button[aria-current=page] .ic{background:var(--b-pale)}
+
 .nav .badge{position:absolute;top:2px;left:calc(50% + 8px);background:var(--b);color:#fff;font-size:10px;border-radius:99px;padding:0 5px;border:2px solid #fff}
 
 /* Experts */
 .dj{display:flex;gap:14px;align-items:center;padding:16px;width:100%;text-align:left}
-.dj .av{width:64px;height:64px}
-.cyc{display:flex;align-items:center;gap:10px;padding:0 4px;min-height:44px;width:100%;color:var(--g);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:18px}
+.dj .av{width:52px;height:52px}
+.dj .chev,.row>button>.i:last-child{color:var(--g2)}
+.cyc{display:flex;align-items:center;gap:10px;padding:0 4px;min-height:48px;width:100%;color:var(--t);font-size:15px;font-weight:600;margin-top:10px}
+.cyc .i:first-child{color:var(--g)}
 .cyc .faces{margin-left:auto;display:flex}
 .cyc .faces img{width:24px;height:24px;border-radius:50%;border:2px solid var(--bg);margin-left:-8px}
 .cyc[aria-expanded=true] .faces{display:none}
 .cyc .i.r{transition:transform .2s}.cyc[aria-expanded=true] .i.r{transform:rotate(90deg)}
-.int{font-size:13px;color:var(--b);font-weight:600;min-height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--b-pale)}
+.int{font-size:13px;color:var(--t);font-weight:500;min-height:36px;padding:0 12px;border-radius:999px;background:var(--bg)}
 .int[aria-pressed=true]{background:var(--b-pale)}
 
 /* Expert */
-.xhead{background:#fff;padding:6px 16px 0;border-bottom:1px solid var(--line);flex:none}
-.xid{display:flex;align-items:center;gap:12px;padding:6px 0 12px}
-.xid .av{width:52px;height:52px}
-.xid .tx{flex:1;min-width:0}.xid b{font-size:18px;display:block}.xid small{color:var(--g);font-size:13px;display:block}
-.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 12px}
+.xhead{background:#fff;padding:0 16px;box-shadow:0 1px 0 var(--line);flex:none}
+.xid{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.xid .av{width:38px;height:38px}
+.xid .st{width:10px;height:10px}
+.xid .tx{flex:1;min-width:0}.xid b{font-size:16px;display:block;line-height:1.2}.xid small{color:var(--g);font-size:12px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 8px}
 .tabs::-webkit-scrollbar{display:none}
-.tabs button{flex:none;min-height:44px;padding:0 7px;font-size:14px;color:var(--g);border-bottom:2px solid transparent;font-weight:500}
+.tabs button{flex:1 0 auto;min-height:44px;padding:0 4px;font-size:14px;color:var(--g);border-bottom:2px solid transparent;font-weight:500}
 .tabs button[aria-selected=true]{color:var(--t);border-color:var(--b);font-weight:600}
 .fil{padding:16px 14px 12px;display:flex;flex-direction:column;gap:10px}
 .msg{display:flex;gap:8px;align-items:flex-end;max-width:88%}
 .msg .av{width:28px;height:28px}
-.bub{background:#fff;border:1px solid var(--line);border-radius:18px 18px 18px 6px;padding:10px 13px;line-height:1.45;font-size:15px}
+.bub{background:#fff;border:0;border-radius:18px 18px 18px 6px;padding:10px 13px;line-height:1.45;font-size:15px}
 .msg.me{align-self:flex-end}
 .msg.me .bub{background:var(--b);color:#fff;border:0;border-radius:18px 18px 6px 18px}
 .meta{font-size:11px;color:var(--g2);margin:2px 0 0 36px}
 .msg.me+.meta{align-self:flex-end;margin:2px 4px 0 0}
-.day{align-self:center;font-size:12px;color:var(--g);background:#fff;border-radius:99px;padding:4px 10px;border:1px solid var(--line)}
+.day{align-self:center;font-size:12px;color:var(--g2);padding:2px 10px}
 .prez{background:#fff;border:1px solid var(--line);border-radius:var(--r3);padding:14px;display:flex;gap:12px;align-self:stretch}
 .prez .av{width:72px;height:72px;border-radius:16px}
 .prez b{font-size:17px}.prez small{display:block;color:var(--g);font-size:13px}
 .prez .mail{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--g);background:var(--bg);border-radius:99px;padding:3px 9px;margin:6px 0 8px}
 .prez .k{display:flex;gap:12px;font-size:13px;color:var(--g)}.prez .k span{display:inline-flex;gap:4px;align-items:center}
-.sugg{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.sugg button{border:1px solid var(--b);color:var(--b);border-radius:999px;padding:8px 14px;font-size:14px;min-height:40px;background:#fff}
+.sugg{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;align-self:stretch;margin:4px -14px 0;padding:0 14px 2px}
+.sugg::-webkit-scrollbar{display:none}
+.sugg button{flex:none;border:0;color:var(--t);border-radius:999px;padding:8px 14px;font-size:14px;min-height:40px;background:#fff}
 .filecard{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;width:250px}
 .filecard .pv{height:120px;background:linear-gradient(180deg,#fff,#F3F1F8);padding:12px;font-size:10px;color:var(--g);line-height:1.5;border-bottom:1px solid var(--line)}
 .filecard .pv b{display:block;color:var(--t);font-size:12px;margin-bottom:4px}
@@ -167,8 +175,8 @@ input,textarea{font:inherit;color:inherit}
 .typing{display:inline-flex;gap:4px}.typing i{width:6px;height:6px;border-radius:50%;background:var(--g2);animation:tp 1s infinite}
 .typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
 @keyframes tp{0%,60%,100%{opacity:.3}30%{opacity:1}}
-.comp{background:#fff;border-top:1px solid var(--line);padding:8px 10px calc(8px + var(--safe-b));display:flex;align-items:flex-end;gap:4px;flex:none}
-.comp textarea{flex:1;border:1px solid var(--line);border-radius:22px;padding:11px 14px;resize:none;height:44px;max-height:120px;outline:none;font-size:15px;background:var(--bg)}
+.comp{background:#fff;box-shadow:0 -1px 0 var(--line);padding:8px 10px calc(8px + var(--safe-b));display:flex;align-items:flex-end;gap:4px;flex:none}
+.comp textarea{flex:1;border:0;border-radius:22px;padding:11px 14px;resize:none;height:44px;max-height:120px;outline:none;font-size:15px;background:var(--bg)}
 .comp .send{background:var(--b);color:#fff}
 .dest{display:flex;align-items:center;gap:6px;padding:8px 14px 0;background:#fff;font-size:13px;color:var(--g);flex:none}
 .dest button{display:inline-flex;align-items:center;gap:4px;color:var(--t);font-weight:600;min-height:32px;padding:0 10px;border-radius:999px;background:var(--bg)}
@@ -219,7 +227,7 @@ input,textarea{font:inherit;color:inherit}
 .tree .nd small{display:block;color:var(--g);font-size:12px}
 .tree .ch{margin-left:22px;padding-left:14px;border-left:2px solid var(--line)}
 .kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.kpi{background:#fff;border:1px solid var(--line);border-radius:var(--r2);padding:14px}
+.kpi{background:#fff;border:0;border-radius:var(--r2);padding:14px}
 .kpi b{font-size:22px;display:block}.kpi small{color:var(--g);font-size:13px}
 .bars{display:flex;align-items:flex-end;gap:6px;height:90px;padding-top:10px}
 .bars i{flex:1;background:var(--b);border-radius:6px 6px 2px 2px;opacity:.85}
@@ -380,9 +388,9 @@ V.connexion = () => `<div class="login">
 V.accueil = () => {
   const r = R(), mine = r.experts;
   const todo = [];
-  if (mine.includes("fatima")) todo.push({x:"fatima",t:"Fatima attend votre accord",p:"Calendrier des posts de la semaine du 16, 12 publications.",a:[["Voir","#/livrables"],["Valider","!ok:Calendrier validé, Fatima publie lundi"]]});
-  if (mine.includes("kouassi")) todo.push({x:"kouassi",t:"Kouassi : 3 réponses à lire",p:"Lagune Distribution a répondu à l'offre Prestige.",a:[["Ouvrir","#/expert/kouassi/discussion"]]});
-  if (S.role==="admin") todo.push({ico:"plug",t:"Gmail à reconnecter",p:"La connexion de Kouassi à Gmail a expiré hier.",a:[["Reconnecter","!ok:Gmail reconnecté"]]});
+  if (mine.includes("fatima")) todo.push({x:"fatima",t:"Calendrier des posts",p:"Fatima attend votre accord",a:[["Voir","#/livrables"],["Valider","!ok:Calendrier validé, Fatima publie lundi"]]});
+  if (mine.includes("kouassi")) todo.push({x:"kouassi",t:"3 réponses de prospects",p:"Lagune Distribution a répondu à Kouassi",a:[["Ouvrir","#/expert/kouassi/discussion"]]});
+  if (S.role==="admin") todo.push({ico:"plug",t:"Gmail à reconnecter",p:"Connexion de Kouassi expirée hier",a:[["Reconnecter","!ok:Gmail reconnecté"]]});
   const cours = [];
   if (mine.includes("kouassi")) cours.push({x:"kouassi",t:"Relance 4 prospects",v:60});
   if (mine.includes("djeneba")) cours.push({x:"djeneba",t:"Prépare l'ordre du jour du Codir",v:30});
@@ -391,13 +399,10 @@ V.accueil = () => {
   return barre("Unifood") + `<main class="scroll"><div class="pad">
     <div class="h1">Bonjour ${r.pre}</div>
     <button class="ask" data-go="#/chat">${ic("sparkles")}<span class="q">Demandez à votre équipe…</span><span class="go">${ic("arrow-up",18)}</span></button>
-    ${todo.length?`<div class="h3">À traiter <span class="n">${todo.length}</span></div><div class="card">${todo.map(t=>`<div class="todo">${t.x?exAv(t.x,"",false):`<span class="av ini" style="background:#FFF3E0;color:#C77700">${ic(t.ico)}</span>`}<div class="tx"><b>${t.t}</b><p>${t.p}</p><div class="acts">${t.a.map(([l,h],i)=>`<button class="pill sm ${i===t.a.length-1?"p":"s"}" ${h[0]==="!"?`data-ok="${esc(h.slice(4))}"`:`data-go="${h}"`}>${l}</button>`).join("")}</div></div></div>`).join("")}</div>`:""}
+    ${todo.length?`<div class="h3">À traiter <span class="n">${todo.length}</span></div><div class="card">${todo.map(t=>{const [l,h]=t.a[t.a.length-1];return `<div class="todo">${t.x?exAv(t.x,"",false):`<span class="av ini" style="background:#FFF3E0;color:#C77700">${ic(t.ico)}</span>`}<div class="tx"><b>${t.t}</b><small>${t.p}</small></div><button class="act" ${h[0]==="!"?`data-ok="${esc(h.slice(4))}"`:`data-go="${h}"`}>${l}</button></div>`}).join("")}</div>`:""}
     ${cours.length?`<div class="h3">En cours</div><div class="card">${cours.map(c=>`<button class="row" data-go="#/expert/${c.x}/discussion">${exAv(c.x)}<span class="tx"><b>${c.t}</b><small>${EX[c.x].n} y travaille</small><span class="prog"><i style="width:${c.v}%"></i></span></span></button>`).join("")}</div>`:""}
     ${liv.length?`<div class="h3" style="justify-content:space-between">Derniers livrables <button data-go="#/livrables" style="color:var(--b);text-transform:none;letter-spacing:0;font-size:14px;min-height:36px">Voir tout</button></div>
       <div class="livh">${liv.map((l,i)=>`<button class="lv" data-liv="${LIV.indexOf(l)}">${fmtBox(l.f)}<b>${l.t}</b><small>${l.own?ic("message-circle",14):`<img src="${ph(l.x)}" alt="">`}${l.d}</small></button>`).join("")}</div>`:""}
-    <div class="h3">Récents</div>
-    <div class="card">${mine.slice(0,3).map((x,i)=>`<button class="row" data-go="#/expert/${x}/discussion">${exAv(x)}<span class="tx"><b>${EX[x].n}</b><small>${["Point de la semaine prêt","Lagune Distribution a répondu","Calendrier des posts prêt"][i]}</small></span><span class="side">${["08:15","09:40","11:02"][i]}</span></button>`).join("")}
-      <button class="row" data-go="#/chat"><span class="av ini">${ic("message-circle")}</span><span class="tx"><b>Chat d'entreprise</b><small>Synthèse des ventes d'octobre</small></span><span class="side">Hier</span></button></div>
     <div class="pw">Powered by <img src="img/yelema-long.png" alt="Yelema"></div>
   </div></main>` + nav("accueil");
 };
@@ -406,12 +411,12 @@ V.experts = () => {
   const r = R(), mine = r.experts.filter(x=>x!=="djeneba");
   const others = Object.keys(EX).filter(x=>x!=="djeneba" && !r.experts.includes(x));
   let h = barre("Mes Experts") + `<main class="scroll"><div class="pad">`;
-  if (r.experts.includes("djeneba")) h += `<div class="card"><div class="dj"><button style="display:contents" data-go="#/expert/djeneba/discussion">${exAv("djeneba")}<span class="tx" style="flex:1;min-width:0;text-align:left"><b style="font-size:18px;display:block">Djénéba</b><small style="color:var(--g)">Chief of Staff & Direction</small><small style="display:block;color:var(--warn);font-size:12px;margin-top:4px">Au travail : ordre du jour du Codir</small></span></button><button class="call" data-call="djeneba" aria-label="Appeler Djénéba">${ic("phone")}</button></div></div>`;
+  if (r.experts.includes("djeneba")) h += `<div class="card"><div class="dj"><button style="display:contents" data-go="#/expert/djeneba/discussion">${exAv("djeneba")}<span class="tx" style="flex:1;min-width:0;text-align:left"><b style="font-size:18px;display:block">Djénéba</b><small style="color:var(--g)">Chief of Staff & Direction</small><small style="display:block;color:var(--g2);font-size:12px;margin-top:4px">Prépare l'ordre du jour du Codir</small></span>${ic("chevron-right",18)}</button></div></div>`;
   CY.forEach(([k,lab,ico])=>{
     const list = mine.filter(x=>EX[x].cy===k); if(!list.length) return;
     const open = S.cycOpen[k] ?? (S.role!=="admin" || k==="com");
     h += `<button class="cyc" data-cyc="${k}" aria-expanded="${open}">${ic(ico,18)}${lab} <span style="font-weight:500">${list.length}</span><span class="faces">${list.map(x=>`<img src="${ph(x)}" alt="">`).join("")}</span>${ic("chevron-right",18).replace('class="i"','class="i r"')}</button>`;
-    if (open) h += `<div class="card">${list.map(x=>`<div class="row"><button style="display:contents" data-go="#/expert/${x}/discussion">${exAv(x)}<span class="tx" style="text-align:left"><b>${EX[x].n}</b><small>${EX[x].j}</small></span></button><button class="call" data-call="${x}" aria-label="Appeler ${EX[x].n}">${ic("phone")}</button></div>`).join("")}</div>`;
+    if (open) h += `<div class="card">${list.map(x=>`<div class="row"><button style="display:contents" data-go="#/expert/${x}/discussion">${exAv(x)}<span class="tx" style="text-align:left"><b>${EX[x].n}</b><small>${EX[x].j}</small></span>${ic("chevron-right",18)}</button></div>`).join("")}</div>`;
   });
   if (S.role==="admin") h += `<button class="pill s" style="width:100%;justify-content:center;margin-top:22px;min-height:48px" data-act="recruter">${ic("plus",18)} Recruter un Expert</button>`;
   else if (others.length) h += `<div class="h3">Dans l'équipe Unifood</div><p style="color:var(--g);font-size:14px;margin:-4px 0 10px">Votre administratrice décide qui travaille avec qui.</p><div class="card">${others.map(x=>`<div class="row">${exAv(x,"",false)}<span class="tx"><b>${EX[x].n}</b><small>${EX[x].j}</small></span><button class="int" data-int="${x}" aria-pressed="${!!S.interest[x]}">${S.interest[x]?"Signalé":"Ça m'intéresse"}</button></div>`).join("")}</div>`;
@@ -421,7 +426,6 @@ V.experts = () => {
 function thread(x){
   if (!S.threads[x]) S.threads[x] = [
     {k:"day",t:"Aujourd'hui"},
-    {k:"prez"},
     {k:"x",t:`Bonjour ${R().pre}, je suis ${EX[x].n}. ${EX[x].moi} On commence par quoi ?`,h:"à l'instant"},
     {k:"sugg"},
   ];
@@ -449,10 +453,12 @@ V.expert = (x, tab="discussion") => {
   if (tab==="appels") { const c = CALLS.filter(v=>v.x===x); body = `<main class="scroll"><div class="pad">${c.length?`<div class="card">${c.map(v=>`<button class="row" data-callsum="${CALLS.indexOf(v)}"><span class="av ini">${ic("phone",18)}</span><span class="tx"><b>${v.t}</b><small>${v.d}, ${v.du}</small></span>${ic("chevron-right",18)}</button>`).join("")}</div>`:`<div class="empty">${ic("phone")}<br>Aucun appel pour l'instant.</div>`}<button class="pill p lg" style="width:100%;justify-content:center;margin-top:16px" data-call="${x}">${ic("phone",18)} Appeler ${e.n}</button></div></main>`; }
   if (tab==="emails") body = `<main class="scroll"><div class="pad"><p style="color:var(--g);font-size:14px;margin:0 0 10px">${ic("mail",14)} ${x}@unifood.yelema.ai</p><div class="card">${MAILS.map(m=>`<button class="row" data-ok="Ouverture du fil « ${esc(m.o)} »"><span class="av ini">${m.de[0]}</span><span class="tx"><b style="${m.nw?"":"font-weight:500"}">${m.de}</b><small>${m.o}</small></span><span class="side">${m.d}</span></button>`).join("")}</div></div></main>`;
   if (tab==="routines") body = `<main class="scroll"><div class="pad"><div class="card">${ROUT.map((r,i)=>`<div class="row"><span class="av ini">${ic("repeat",18)}</span><span class="tx"><b>${r.t}</b><small>${r.h}</small></span><button class="tog" role="switch" aria-checked="${r.on}" data-tog="${i}" aria-label="Activer ${r.t}"></button></div>`).join("")}</div><button class="pill s" style="width:100%;justify-content:center;margin-top:14px;min-height:48px" data-go="#/expert/${x}/discussion">${ic("plus",18)} Nouvelle routine</button></div></main>`;
-  return `<header class="top"><button class="back" data-back="#/experts" aria-label="Retour">${ic("chevron-left",26)}</button><h2></h2>
+  return `<header class="top"><button class="back" data-back="#/experts" aria-label="Retour">${ic("chevron-left",26)}</button>
+    <div class="xid">${exAv(x)}<div class="tx"><b>${e.n}</b><small>${e.j}</small></div></div>
+    <button class="call" data-call="${x}" aria-label="Appeler ${e.n}">${ic("phone")}</button>
     <button class="ib" data-act="plus-expert" data-x="${x}" aria-label="Plus">${ic("ellipsis")}</button>
     <button class="ib yele-b" data-act="yele" aria-label="Yélé"><img src="img/yele.webp" alt=""></button></header>
-    <div class="xhead"><div class="xid">${exAv(x)}<div class="tx"><b>${e.n}</b><small>${e.j}</small><small style="font-size:12px;color:${e.st==="trav"?"var(--warn)":"var(--ok)"}">${e.st==="trav"?"Au travail":"Disponible"}</small></div><button class="call" data-call="${x}" aria-label="Appeler ${e.n}" style="width:48px;height:48px">${ic("phone")}</button></div>
+    <div class="xhead">
     <div class="tabs" role="tablist">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${tab===k}" data-go="#/expert/${x}/${k}">${l}</button>`).join("")}</div></div>` + body;
 };
 
